@@ -1,0 +1,22 @@
+{
+  "Яблуко Зелене": {
+    "price": "10 грн",
+    "image": "products/apple-green.jpg"
+  },
+  "Яблуко Жовте": {
+    "price": "15 грн",
+    "image": "products/apple-yellow.jpg"
+  },
+  "Яблуко Червоне": {
+    "price": "20 грн",
+    "image": "products/apple.jpg"
+  },
+  "Груша": {
+    "price": "5 грн 20коп",
+    "image": "products/grusha.jpg"
+  },
+  "Слива": {
+    "price": "31 грн 90коп",
+    "image": "products/plum.jpg"
+  }
+}
