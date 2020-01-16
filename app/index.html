@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="file/tilda-zoom-2.0.min.css" type="text/css" media="all">
   <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
   <link rel="stylesheet" href="file/css" type="text/css">
+  <link rel="stylesheet" href="libs/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
   <script src="file/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" async="" id="tildastatscript" src="file/tildasimplestat-0.1.min.js"></script>
   <script src="file/tilda-scripts-2.8.min.js"></script>
@@ -727,7 +729,7 @@
       z-index: 2;
       top: 0px;
       left: 0px;
-      width: 1930px;
+      width: 100%;
       height: 906px;
     }
 
@@ -813,10 +815,32 @@
              data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits">
 
           <form action="#" id="products-container">
-            <input type="text" id="search-product" style="outline: none;">
+            <input type="text" id="search-product" placeholder="Название товара" autocomplete="off" style="outline: none;width: 225px;border: none;">
 
-            <div class="list"></div>
+            <div class="list">Товар не знайдено</div>
           </form>
+
+          <div class="white-popup mfp-with-anim mfp-hide" id="curt-popup">
+            <h2>Оставте заявку</h2>
+
+            <form action="javascript:void(null);" method="post" onsubmit="sendEmail('email.php')" id="feedback">
+              <div><input type="text" name="name" id="name-input" placeholder="Имя" required></div>
+              <div><input type="tel" name="tel" id="tel-input" placeholder="Телефон" required></div>
+
+              <div id="mini-cart"></div>
+              <div class="wrap-total-sum">
+                Всего:
+                <input type="text" id="total-sum" readonly value="0"></div>
+              <div class="text-center">
+                <input type="submit" class="btn">
+              </div>
+            </form>
+          </div>
+
+          <a href="#curt-popup" id="curt-button" data-effect="fadeInDown" class="popup hide">
+            <h3>Открить корзину</h3>
+            <div class="count">1</div>
+          </a>
         </div>
 
         <!--                 Вивід товара -->
@@ -830,8 +854,7 @@
              data-field-heightunits-value="" data-field-widthunits-value=""
              data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
              style="left: 576.5px; top: 569px; width: 20px;">
-          <div class="tn-atom"><img class="tn-atom__img t-img" data-original="file/search.png"
-                                    imgfield="tn_img_1575900707541"></div>
+          <div class="tn-atom"> </div>
         </div>
         <div class="t396__elem tn-elem tn-elem__1479662341575900766205" data-elem-id="1575900766205"
              data-elem-type="button" data-field-top-value="639" data-field-top-res-640-value="639"
@@ -6366,5 +6389,10 @@
   </div>
 </div>
 <script src="js/scripts.js"></script>
+<script src="libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+</script>
 </body>
 </html>

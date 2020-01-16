@@ -102,6 +102,6 @@ gulp.task('build', ['clean', 'img', 'libscss', 'libsjs'], function() {
 
 gulp.task('clear', function (callback) {
 	return cache.clearAll();
-})
+});
 
 gulp.task('default', ['watch']);
