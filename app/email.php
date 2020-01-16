@@ -20,7 +20,7 @@ foreach ($cart as $id => $count) {
 $message .= "<p style='text-align: right;'>Всего: ".$totalSum."</p>";
 
 $return_message = "";
-$to = "work.email.seryoga@gmail.com";
+$to = "work.email.seryoga@gmail.com, vlf@express-med.com.ua, pavlenkoelis@gmail.com";
 
 $headers = "From: noreply@website.com/\r\n";
 $headers .= "Content-type: text/html; charset=utf-8 \r\n";

@@ -14,12 +14,12 @@ const productsOut = (data) => {
     id = 0,
     value = $('#search-product').val();
 
-
   for (let key in data) {
     let product = data[id]['Товар'].toLowerCase();
 
     value = value.toLowerCase();
-    if (product.indexOf(value) === 0) {
+
+    if (product.match(value) !== null) {
       list.fadeIn(300);
 
       out += `<div class="product">`;
@@ -31,14 +31,17 @@ const productsOut = (data) => {
       out += `<button class="add-to-cart" data-product='${id}' type="button">В Корзину</button>`;
       out += `</div>`;
       out += `</div>`;
-    } else {
-      list.text('Не знайдено результатіів');
     }
 
     id++;
   }
-  list.text('Не знайдено результатіів');
-  list.html(out);
+
+  if(out === ""){
+    list.text('Нет результатов');
+  } else {
+    list.html(out);
+  }
+
   $('.add-to-cart').on('click', addToCart);
 };
 
@@ -129,7 +132,6 @@ function totalSum() {
   totalSum = totalSum.toFixed(2);
 
   $('#total-sum').val(totalSum + " грн.");
-  console.log(totalSum);
 }
 
 function plusProduct() {
@@ -227,11 +229,6 @@ $(function () {
 
   $searchProduct.focusout(function () {
     list.fadeOut(300);
-  });
-
-  $searchProduct.focus(function () {
-    init();
-    list.fadeIn(300);
   });
 
   $('.popup').magnificPopup({
