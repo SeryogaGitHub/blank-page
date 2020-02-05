@@ -50,7 +50,7 @@ const productsOut = (data) => {
       if (quantityGoods < 3){
         out += `<button class="add-to-cart" data-product='${id}' type="button">В Корзину</button>`;
       } else {
-        out += `<button class="disabled" data-product='${id}' type="button" disabled>Корзина полная</button>`;
+        out += `<button class="disabled" data-product='${id}' type="button" disabled>Корзина заповнена</button>`;
       }
       out += `</div>`;
       out += `</div>`;
@@ -133,7 +133,7 @@ function showCart() {
       out += `<button type="button" class="plus calc-btn" data-id="${id}" data-count="${cart[id]}">+</button>`;
       out += `</div>`;
       out += `<div class="price"><span class="count-sum">${(cart[id] * product[id]["Цена"]).toFixed(2)}</span> грн.</div>`;
-      out += `<button class="delete" type="button" data-id="${id}" data-count="${cart[id]}">Удалить</button>`;
+      out += `<button class="delete" type="button" data-id="${id}" data-count="${cart[id]}">Видалити</button>`;
       out += `</div>`;
       out += `</div>`;
     }
